@@ -1,0 +1,72 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+:root{
+  --purple: #4B0082;
+  --gold: #FFD700;
+  --text: #111111;
+  --bg: #FFFFFF;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Poppins',Arial,sans-serif; -webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Top promo (fixed) */
+.top-slider{ position:fixed; top:0; left:0; width:100%; background:var(--purple); color:#fff; z-index:10000; padding:8px 0; font-weight:600 }
+.top-slider .slide{ display:flex; justify-content:center; align-items:center; gap:6px; width:100% }
+.top-slider .signup-link{ color:var(--gold); text-decoration:underline; font-weight:800 }
+
+/* Header area below promo */
+.header-wrap{ position:fixed; top:48px; left:0; right:0; z-index:9999; background:var(--purple); color:#fff; padding:10px 16px; box-shadow:0 4px 14px rgba(0,0,0,.06); display:flex; align-items:center; justify-content:space-between }
+.logo{ font-family:'Libre Baskerville', serif; font-size:26px; color:#fff }
+
+/* Desktop nav links */
+.nav-links{ display:flex; gap:14px; align-items:center }
+.nav-link{ color:#fff; font-weight:600; margin-right:6px }
+
+/* Hamburger only on mobile */
+.hamburger{ display:none; background:transparent; border:none; color:#fff; font-size:22px }
+
+/* Search + icons */
+.icon-btn{ color:#fff; background:transparent; border:none; font-size:18px; margin-left:8px; cursor:pointer }
+
+/* Main content area should be pushed below header + promo */
+.main-content{ padding-top:140px; padding-bottom:120px; max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px }
+
+/* Hero */
+.hero{ width:100%; height:420px; border-radius:12px; overflow:hidden; position:relative; background:#eee; display:flex; align-items:center; justify-content:center }
+.hero img{ width:100%; height:100%; object-fit:cover }
+
+/* Carousels & Grid */
+.section-title{ font-size:18px; margin:10px 0; font-weight:700 }
+.carousel{ position:relative; display:flex; gap:12px; overflow:hidden; align-items:center }
+.products-grid{ display:grid; gap:16px; grid-template-columns:repeat(4,1fr) }
+@media (max-width:1024px){ .products-grid{ grid-template-columns:repeat(3,1fr) } }
+@media (max-width:768px){ .products-grid{ grid-template-columns:repeat(2,1fr) } }
+@media (max-width:480px){ .products-grid{ grid-template-columns:1fr } }
+
+/* Card */
+.card{ border:1px solid #eee; border-radius:12px; overflow:hidden; position:relative; background:#fff; display:flex; flex-direction:column }
+.thumb{ width:100%; aspect-ratio:1/1; object-fit:cover }
+.info{ padding:12px }
+.price{ font-weight:800; margin-top:6px }
+
+/* Cart round outline icon (bottom-right) */
+.cart-fab{ position:absolute; right:10px; bottom:10px; width:40px; height:40px; border-radius:50%; border:2px solid var(--purple); display:flex; align-items:center; justify-content:center; background:#fff; cursor:pointer }
+.cart-fab svg{ stroke:var(--purple) }
+
+/* Sold badge */
+.sold-badge{ position:absolute; top:12px; left:12px; background:var(--purple); color:#fff; padding:6px 10px; border-radius:6px; font-weight:800 }
+
+/* Newsletter */
+.newsletter{ background:#fff; border-radius:12px; padding:16px; box-shadow:0 8px 24px rgba(0,0,0,.06); display:flex; gap:8px; align-items:center }
+
+/* Footer */
+.footer{ margin-top:32px; padding:28px 16px; background:#fff }
+.footer-note{ position:fixed; left:0; right:0; bottom:0; background:var(--purple); color:#fff; text-align:center; padding:10px; z-index:9999; font-weight:700 }
+
+/* Responsive nav: show hamburger on small screens */
+@media (max-width:768px){
+  .nav-links{ display:none }
+  .hamburger{ display:block }
+}
